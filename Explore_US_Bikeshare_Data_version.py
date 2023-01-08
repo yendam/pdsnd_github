@@ -24,7 +24,7 @@ def get_filters():
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     while True:
-        city = input('Would you like to see data for chicago, new york city, or washington?')
+        city = input('Would you like to see data for chicago, new york city, or washington?').lower()
         if not city in cities:
             print('Please choose from the options.')
             continue
@@ -156,30 +156,20 @@ def user_stats(df):
     print('Counts of user types:', user_types)
 
     # Display counts of gender
-    try:
+    if 'Gender' in df.columns:
         gender = df['Gender'].value_counts()
         print('Counts of gender:', gender)
-    except KeyError:
-        print('Gender is unknown.')
 
     # Display earliest, most recent, and most common year of birth
-    try:
+    if 'Birth Year' in df.columns:
         earliest_birth_year = df['Birth Year'].min()
         print('Earliest year of birth:', earliest_birth_year)
-    except KeyError:
-        print('Earliest year of birth is unknown.')
 
-    try:
         recent_birth_year = df['Birth Year'].max()
         print('Most recent year of birth:', recent_birth_year)
-    except KeyError:
-        print('Most recent year of birth is unknown.')
 
-    try:
         common_birth_year = df['Birth Year'].mode()[0]
         print('Most common year of birth:', common_birth_year)
-    except KeyError:
-        print('Most common year of birth is unknown.')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
