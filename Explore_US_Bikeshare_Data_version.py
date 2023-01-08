@@ -161,23 +161,15 @@ def user_stats(df):
         print('Counts of gender:', gender)
 
     # Display earliest, most recent, and most common year of birth
-    try:
+    if 'Birth Year' in df.columns:
         earliest_birth_year = df['Birth Year'].min()
         print('Earliest year of birth:', earliest_birth_year)
-    except KeyError:
-        print('Earliest year of birth is unknown.')
 
-    try:
         recent_birth_year = df['Birth Year'].max()
         print('Most recent year of birth:', recent_birth_year)
-    except KeyError:
-        print('Most recent year of birth is unknown.')
 
-    try:
         common_birth_year = df['Birth Year'].mode()[0]
         print('Most common year of birth:', common_birth_year)
-    except KeyError:
-        print('Most common year of birth is unknown.')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
