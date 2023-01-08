@@ -15,5 +15,10 @@ chicago.csv
 new_york_city.csv
 washington.csv
 
+### Software used
+Python 3, Numpy, and pandas installed using Jupyter Notebook
+Text editor Atom
+A terminal application on Windows
+
 ### Credits
 Udacity - Programming for Data Science with Python
