@@ -156,11 +156,9 @@ def user_stats(df):
     print('Counts of user types:', user_types)
 
     # Display counts of gender
-    try:
+    if 'Gender' in df.columns:
         gender = df['Gender'].value_counts()
         print('Counts of gender:', gender)
-    except KeyError:
-        print('Gender is unknown.')
 
     # Display earliest, most recent, and most common year of birth
     try:
