@@ -16,9 +16,9 @@ Randomly selected data for the first six months of 2017 are provided for all thr
 - washington.csv
 
 ### Software used
-Python 3, Numpy, and pandas installed using Jupyter Notebook
-Text editor Atom
-A terminal application on Windows
+- Python 3, Numpy, and pandas installed using Jupyter Notebook.
+- Text editor Atom.
+- A terminal application on Windows.
 
 ### Credits
 Udacity - Programming for Data Science with Python
